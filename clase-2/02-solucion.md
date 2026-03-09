@@ -46,7 +46,7 @@ CREATE TABLE library.loans (
     book_id INT NOT NULL,
     member_id INT NOT NULL,
     loan_date DATE NOT NULL DEFAULT CURRENT_DATE,
-    due_date NOT NULL, ---  No olvides del CHECK
+    due_date DATE NOT NULL, ---  No olvides del CHECK
     return_date DATE,
     CONSTRAINT chk_loans_due_date CHECK(due_date > loan_date),
     CONSTRAINT chk_loans_return_date CHECK(return_date IS NULL OR return_date >= loan_date),
